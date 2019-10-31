@@ -8,6 +8,10 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 
+// server.get('/', (req, res) => {
+//   res.status(200).json({ message:`it's working!` })
+// })
+
 server.get('/', (req, res) => {
   Shoutouts.find()
   .then(shoutouts => {
